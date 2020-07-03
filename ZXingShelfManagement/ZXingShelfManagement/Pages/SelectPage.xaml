@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ZXingShelfManagement.SelectPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.ColumnSpan="10" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+
+        <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" BackgroundColor="LightGray" TextColor="Black" VerticalOptions="Fill" Text="陳列･在庫チェック" ></Button>
+        <Button Grid.Row="1" Grid.Column="5" Grid.ColumnSpan="5" BackgroundColor="LightGray" TextColor="Black" VerticalOptions="Fill" Text="補充依頼する" ></Button>
+        <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="5" BackgroundColor="LightGray" TextColor="Black" VerticalOptions="Fill" Text="POPを出力" ></Button>
+        <Button Grid.Row="2" Grid.Column="5" Grid.ColumnSpan="5" BackgroundColor="LightGray" TextColor="Black" VerticalOptions="Fill" Text="発注点を増やす" ></Button>
+        <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" BackgroundColor="LightGray" TextColor="Black" VerticalOptions="Fill" Text="POPを外す" ></Button>
+        <Button Grid.Row="3" Grid.Column="5" Grid.ColumnSpan="5" BackgroundColor="LightGray" TextColor="Black" VerticalOptions="Fill" Text="発注点を減らす" ></Button>
+        <Button Grid.Row="4" Grid.ColumnSpan="10" BackgroundColor="LightGray" TextColor="Black" VerticalOptions="Fill" Text="何もしない"></Button>
+
+        <Label Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" VerticalOptions="Fill" ></Label>
+        <Label Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="4" VerticalOptions="Fill" ></Label>
+        <Label Grid.Row="5" Grid.Column="7" Grid.ColumnSpan="3" VerticalOptions="Fill" ></Label>
+
+        <Label Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="1" VerticalOptions="Fill" Text="店" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+        <Label Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="1" VerticalOptions="Fill" Text="在庫" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+        <Label Grid.Row="6" Grid.Column="3" Grid.ColumnSpan="1" VerticalOptions="Fill" Text="在発" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+        <Label Grid.Row="6" Grid.Column="4" Grid.ColumnSpan="1" VerticalOptions="Fill" Text="移送" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+        <Label Grid.Row="6" Grid.Column="5" Grid.ColumnSpan="1" VerticalOptions="Fill" Text="発点" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+        <Label Grid.Row="6" Grid.Column="6" Grid.ColumnSpan="1" VerticalOptions="Fill" Text="週１" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+        <Label Grid.Row="6" Grid.Column="7" Grid.ColumnSpan="1" VerticalOptions="Fill" Text="週２" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+        <Label Grid.Row="6" Grid.Column="8" Grid.ColumnSpan="1" VerticalOptions="Fill" Text="週３" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+
+        <Label Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+        <Label Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+        <Label Grid.Row="7" Grid.Column="3" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+        <Label Grid.Row="7" Grid.Column="4" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+        <Label Grid.Row="7" Grid.Column="5" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+        <Label Grid.Row="7" Grid.Column="6" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+        <Label Grid.Row="7" Grid.Column="7" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+        <Label Grid.Row="7" Grid.Column="8" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+
+        <Label Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="1" VerticalOptions="Fill" Text="全" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+        <Label Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+        <Label Grid.Row="8" Grid.Column="3" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+        <Label Grid.Row="8" Grid.Column="4" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+        <Label Grid.Row="8" Grid.Column="5" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+        <Label Grid.Row="8" Grid.Column="6" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+        <Label Grid.Row="8" Grid.Column="7" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+        <Label Grid.Row="8" Grid.Column="8" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+    </Grid>
+</ContentPage>
