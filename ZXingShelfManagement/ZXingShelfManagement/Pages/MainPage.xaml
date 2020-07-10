@@ -13,7 +13,7 @@
         </Grid.RowDefinitions>
 
         <Button Grid.Row="0" VerticalOptions="Fill" BackgroundColor="LightGray" TextColor="Black" Text="カメラ起動" Clicked="Camera_Open"></Button>
-        <Button Grid.Row="1" VerticalOptions="Fill" BackgroundColor="LightGray" TextColor="Black" Text="履歴"></Button>
+        <Button Grid.Row="1" VerticalOptions="Fill" BackgroundColor="LightGray" TextColor="Black" Text="履歴" Clicked="List_Open"></Button>
     </Grid>
 
 </ContentPage>

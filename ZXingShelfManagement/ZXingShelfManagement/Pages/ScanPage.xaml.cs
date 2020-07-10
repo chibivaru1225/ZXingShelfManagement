@@ -16,37 +16,41 @@ namespace ZXingShelfManagement
         {
             InitializeComponent();
 
+            zxing.AutoFocus();
             TaskHttpGet.Instance.Listener = this;
-            this.Title = "棚管理";
+            this.Title = "バーコードスキャン";
+            NavigationPage.SetBackButtonTitle(this, String.Empty);
         }
 
         public void Handle_OnScanResult(ZXing.Result result)
         {
-            zxing.IsScanning = false;
+            this.IsBusy = true;
+            zxing.IsAnalyzing = false;
             TaskHttpGet.Instance.Run(result.Text);
         }
 
         public void OnFailure()
         {
-            zxing.IsScanning = true;
+            this.IsBusy = false;
+            zxing.IsAnalyzing = true;
         }
 
         public void OnSuccess()
         {
-            Navigation.PushAsync(new SelectPage());
-            //Navigation.PopAsync(true);
+            this.IsBusy = false;
+            zxing.IsAnalyzing = false;
+            var p = new SelectPage(TaskHttpGet.Instance.LatestStatus);
+            p.ParentPage = this;
+            Navigation.PushAsync(p, true);
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
             zxing.IsScanning = true;
-        }
 
-        protected override void OnDisappearing()
-        {
-            zxing.IsScanning = false;
-            base.OnDisappearing();
+            if (zxing.IsAnalyzing == false)
+                zxing.IsAnalyzing = true;
         }
     }
 }

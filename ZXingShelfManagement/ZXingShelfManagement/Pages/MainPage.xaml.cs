@@ -17,12 +17,18 @@ namespace ZXingShelfManagement
         {
             InitializeComponent();
 
-            this.Title = "棚管理";
+            this.Title = "棚管理 メニュー";
+            NavigationPage.SetBackButtonTitle(this, String.Empty);
         }
 
         public void Camera_Open(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new ScanPage());
+            Navigation.PushAsync(new ScanPage(), true);
+        }
+
+        private void List_Open(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new ShelfListPage(), true);
         }
     }
 }

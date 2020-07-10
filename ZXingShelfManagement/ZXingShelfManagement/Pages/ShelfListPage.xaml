@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ZXingShelfManagement.ShelfListPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="8*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1" VerticalOptions="Fill" BackgroundColor="LightGray" TextColor="Black" Clicked="AllSelect_Clicked" Text="全選択"></Button>
+        <Button Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" VerticalOptions="Fill" BackgroundColor="LightGray" TextColor="Black" Clicked="AllRelease_Clicked" Text="全解除"></Button>
+        <Button Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="1" VerticalOptions="Fill" BackgroundColor="LightGray" TextColor="Black" x:Name="btnSend" Clicked="Send_Clicked" Text="送信"></Button>
+
+        <ListView Grid.Row="0" Grid.ColumnSpan="3" x:Name="ShelfStatusList" HasUnevenRows="false" RowHeight="80" ItemSelected="OnItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid x:Name="RowGrid" BackgroundColor="{Binding RowColor}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"></RowDefinition>
+                                <RowDefinition Height="1*"></RowDefinition>
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <CheckBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1" VerticalOptions="Fill" IsChecked="{Binding IsSend}"></CheckBox>
+                            <Label Grid.Row="0" Grid.Column="2" VerticalOptions="Fill" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" Grid.ColumnSpan="2" Text="送信する"></Label>
+                            <Label Grid.Row="0" Grid.Column="4" VerticalOptions="Fill" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" Grid.ColumnSpan="4" Text="{Binding ShohinCode}"></Label>
+
+                            <Label Grid.Row="1" Grid.Column="0" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.ColumnSpan="4" Text="{Binding ItemStatusText}"></Label>
+                            <Label Grid.Row="1" Grid.Column="4" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.ColumnSpan="4" Text="{Binding SelectStatusText}"></Label>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>

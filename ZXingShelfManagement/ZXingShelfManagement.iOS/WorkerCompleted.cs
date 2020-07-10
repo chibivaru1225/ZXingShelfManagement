@@ -26,11 +26,11 @@ namespace ZXingShelfManagement.iOS
         {
             UIApplication.SharedApplication.InvokeOnMainThread(() =>
             {
-                if (e.Result == null || !(e.Result is HttpGetResult))
+                if (e.Result == null || !(e.Result is HttpResult))
                 {
                     this.listener?.OnFailure();
                 }
-                else if (e.Result != null && e.Result is HttpGetResult result)
+                else if (e.Result != null && e.Result is HttpResult result)
                 {
                     if (result.IsSuccess)
                         this.listener?.OnSuccess();

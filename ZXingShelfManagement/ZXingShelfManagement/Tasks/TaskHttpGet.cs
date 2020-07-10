@@ -1,8 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Net.Http;
 using System.Text;
+using System.Web;
 using Xamarin.Forms;
 
 namespace ZXingShelfManagement
@@ -35,6 +38,8 @@ namespace ZXingShelfManagement
             }
         }
 
+        public ShelfStatus LatestStatus { get; set; }
+
         private TaskHttpGet()
         {
             worker = new BackgroundWorker();
@@ -55,57 +60,32 @@ namespace ZXingShelfManagement
 
             if (e.Argument == null || !(e.Argument is String))
             {
-                e.Result = new HttpGetResult(false);
+                e.Result = new HttpResult(false);
                 return;
             }
             else if (e.Argument != null && e.Argument is String jancode)
             {
-                var r = client.GetAsync(Util.GetURL + jancode).Result;
+                var url = Util.GetURL + HttpUtility.UrlEncode(jancode);
+                var r = client.GetAsync(url).Result;
+                var enc = Portable.Text.Encoding.GetEncoding("Shift-JIS");
 
-                Console.WriteLine(r.Content.ReadAsStringAsync().Result);
-
-                e.Result = new HttpGetResult(true);
-                return;
-            }
-        }
-
-        //private void RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        //{
-        //    switch (Device.RuntimePlatform)
-        //    {
-        //        case Device.Android:
-        //            if (e.Result == null || !(e.Result is HttpGetResult))
-        //            {
-        //                this.listener?.OnFailure();
-        //            }
-        //            else if (e.Result != null && e.Result is HttpGetResult result)
-        //            {
-        //                if (result.IsSuccess)
-        //                    this.listener?.OnSuccess();
-        //                else
-        //                    this.listener?.OnFailure();
-        //            }
-        //            break;
-        //        case Device.iOS:
-        //            break;
-        //    }
-        //}
-
-        public class HttpGetResult
-        {
-            public bool IsSuccess
-            {
-                get
+                using (var stream = (r.Content.ReadAsStreamAsync().Result))
+                using (var reader = (new StreamReader(stream, enc, true)) as TextReader)
                 {
-                    return issuccess;
+                    try
+                    {
+                        var t = reader.ReadToEnd();
+                        Console.WriteLine(t);
+                        this.LatestStatus = JsonConvert.DeserializeObject<ShelfStatus>(t);
+                        e.Result = new HttpResult(true);
+                    }
+                    catch
+                    {
+                        e.Result = new HttpResult(false);
+                    }
                 }
-            }
 
-            private bool issuccess;
-
-            public HttpGetResult(bool Success)
-            {
-                this.issuccess = Success;
+                return;
             }
         }
     }

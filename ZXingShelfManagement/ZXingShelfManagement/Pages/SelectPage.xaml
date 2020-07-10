@@ -31,19 +31,19 @@
             <ColumnDefinition Width="1*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Label Grid.Row="0" Grid.ColumnSpan="10" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+        <Label Grid.Row="0" Grid.ColumnSpan="10" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" x:Name="txtItemStatus"></Label>
 
-        <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" BackgroundColor="LightGray" TextColor="Black" VerticalOptions="Fill" Text="陳列･在庫チェック" ></Button>
-        <Button Grid.Row="1" Grid.Column="5" Grid.ColumnSpan="5" BackgroundColor="LightGray" TextColor="Black" VerticalOptions="Fill" Text="補充依頼する" ></Button>
-        <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="5" BackgroundColor="LightGray" TextColor="Black" VerticalOptions="Fill" Text="POPを出力" ></Button>
-        <Button Grid.Row="2" Grid.Column="5" Grid.ColumnSpan="5" BackgroundColor="LightGray" TextColor="Black" VerticalOptions="Fill" Text="発注点を増やす" ></Button>
-        <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" BackgroundColor="LightGray" TextColor="Black" VerticalOptions="Fill" Text="POPを外す" ></Button>
-        <Button Grid.Row="3" Grid.Column="5" Grid.ColumnSpan="5" BackgroundColor="LightGray" TextColor="Black" VerticalOptions="Fill" Text="発注点を減らす" ></Button>
-        <Button Grid.Row="4" Grid.ColumnSpan="10" BackgroundColor="LightGray" TextColor="Black" VerticalOptions="Fill" Text="何もしない"></Button>
+        <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" BackgroundColor="LightGray" TextColor="Black" VerticalOptions="Fill" Text="陳列･在庫チェック" x:Name="btnDisplay"></Button>
+        <Button Grid.Row="1" Grid.Column="5" Grid.ColumnSpan="5" BackgroundColor="LightGray" TextColor="Black" VerticalOptions="Fill" Text="補充依頼する" x:Name="btnTransfer"></Button>
+        <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="5" BackgroundColor="LightGray" TextColor="Black" VerticalOptions="Fill" Text="POPを出力" x:Name="btnPopCreate"></Button>
+        <Button Grid.Row="2" Grid.Column="5" Grid.ColumnSpan="5" BackgroundColor="LightGray" TextColor="Black" VerticalOptions="Fill" Text="発注点を増やす" x:Name="btnOPIncrease"></Button>
+        <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" BackgroundColor="LightGray" TextColor="Black" VerticalOptions="Fill" Text="POPを外す" x:Name="btnPopRemove"></Button>
+        <Button Grid.Row="3" Grid.Column="5" Grid.ColumnSpan="5" BackgroundColor="LightGray" TextColor="Black" VerticalOptions="Fill" Text="発注点を減らす" x:Name="btnOPDecrease"></Button>
+        <Button Grid.Row="4" Grid.ColumnSpan="10" BackgroundColor="LightGray" TextColor="Black" VerticalOptions="Fill" Text="何もしない" x:Name="btnNONE"></Button>
 
-        <Label Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" VerticalOptions="Fill" ></Label>
-        <Label Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="4" VerticalOptions="Fill" ></Label>
-        <Label Grid.Row="5" Grid.Column="7" Grid.ColumnSpan="3" VerticalOptions="Fill" ></Label>
+        <Label Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" VerticalOptions="Fill" HorizontalTextAlignment = "Center" x:Name="txtShelfSb"></Label>
+        <Label Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="4" VerticalOptions="Fill" HorizontalTextAlignment = "Center" x:Name="txtShelfJy"></Label>
+        <Label Grid.Row="5" Grid.Column="7" Grid.ColumnSpan="3" VerticalOptions="Fill" HorizontalTextAlignment = "Center" x:Name="txtShelfAr"></Label>
 
         <Label Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="1" VerticalOptions="Fill" Text="店" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
         <Label Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="1" VerticalOptions="Fill" Text="在庫" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
@@ -54,22 +54,22 @@
         <Label Grid.Row="6" Grid.Column="7" Grid.ColumnSpan="1" VerticalOptions="Fill" Text="週２" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
         <Label Grid.Row="6" Grid.Column="8" Grid.ColumnSpan="1" VerticalOptions="Fill" Text="週３" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
 
-        <Label Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
-        <Label Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
-        <Label Grid.Row="7" Grid.Column="3" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
-        <Label Grid.Row="7" Grid.Column="4" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
-        <Label Grid.Row="7" Grid.Column="5" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
-        <Label Grid.Row="7" Grid.Column="6" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
-        <Label Grid.Row="7" Grid.Column="7" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
-        <Label Grid.Row="7" Grid.Column="8" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+        <Label Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" x:Name="txtShelfJMise"></Label>
+        <Label Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" x:Name="txtShelfJZaiko"></Label>
+        <Label Grid.Row="7" Grid.Column="3" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" x:Name="txtShelfJZaiHatsu"></Label>
+        <Label Grid.Row="7" Grid.Column="4" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" x:Name="txtShelfJIso"></Label>
+        <Label Grid.Row="7" Grid.Column="5" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" x:Name="txtShelfJHatten"></Label>
+        <Label Grid.Row="7" Grid.Column="6" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" x:Name="txtShelfJSyubai1"></Label>
+        <Label Grid.Row="7" Grid.Column="7" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" x:Name="txtShelfJSyubai2"></Label>
+        <Label Grid.Row="7" Grid.Column="8" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" x:Name="txtShelfJSyubai3"></Label>
 
         <Label Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="1" VerticalOptions="Fill" Text="全" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
-        <Label Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
-        <Label Grid.Row="8" Grid.Column="3" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
-        <Label Grid.Row="8" Grid.Column="4" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
-        <Label Grid.Row="8" Grid.Column="5" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
-        <Label Grid.Row="8" Grid.Column="6" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
-        <Label Grid.Row="8" Grid.Column="7" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
-        <Label Grid.Row="8" Grid.Column="8" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+        <Label Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" x:Name="txtShelfZZaiko"></Label>
+        <Label Grid.Row="8" Grid.Column="3" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" x:Name="txtShelfZZaiHatsu"></Label>
+        <Label Grid.Row="8" Grid.Column="4" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" x:Name="txtShelfZIso"></Label>
+        <Label Grid.Row="8" Grid.Column="5" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" x:Name="txtShelfZHatten"></Label>
+        <Label Grid.Row="8" Grid.Column="6" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" x:Name="txtShelfZSyubai1"></Label>
+        <Label Grid.Row="8" Grid.Column="7" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" x:Name="txtShelfZSyubai2"></Label>
+        <Label Grid.Row="8" Grid.Column="8" Grid.ColumnSpan="1" VerticalOptions="Fill" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" x:Name="txtShelfZSyubai3"></Label>
     </Grid>
 </ContentPage>
