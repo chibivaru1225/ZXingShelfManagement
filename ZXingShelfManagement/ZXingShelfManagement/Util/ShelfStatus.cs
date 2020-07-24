@@ -131,7 +131,7 @@ namespace ZXingShelfManagement
         {
             get
             {
-                return this.ItemStatus.GetDispName;
+                return this.ItemStatus.DispName;
             }
         }
 

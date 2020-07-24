@@ -33,7 +33,7 @@ namespace ZXingShelfManagement
 
         private void SetShelfStatus(ShelfStatus status)
         {
-            txtItemStatus.Text = status.ItemStatus.GetDispName;
+            txtItemStatus.Text = status.ItemStatus.DispName;
 
             txtShelfSb.Text = String.Format("(商:{0})", status.ShohinBan);
             txtShelfJy.Text = String.Format("状態:{0}", status.Jyotai);

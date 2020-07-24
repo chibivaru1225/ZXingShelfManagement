@@ -31,15 +31,15 @@ namespace ZXingShelfManagement
                 return this.ItemStatuses;
             }
 
-            public String GetDispName
+            public String DispName
             {
                 get
                 {
-                    return DispName(this.ItemStatuses);
+                    return GetDispName(this.ItemStatuses);
                 }
             }
 
-            public static String DispName(ItemStatuses type)
+            public static String GetDispName(ItemStatuses type)
             {
                 switch (type)
                 {
@@ -104,15 +104,15 @@ namespace ZXingShelfManagement
                 return this.SelectStatuses;
             }
 
-            public String GetDispName
+            public String DispName
             {
                 get
                 {
-                    return DispName(this.SelectStatuses);
+                    return GetDispName(this.SelectStatuses);
                 }
             }
 
-            public static String DispName(SelectStatuses type)
+            public static String GetDispName(SelectStatuses type)
             {
                 switch (type)
                 {
@@ -156,7 +156,7 @@ namespace ZXingShelfManagement
 
             public static void SetText(Button button, SelectStatuses select)
             {
-                button.Text = DispName(select);
+                button.Text = GetDispName(select);
             }
 
             public static void SetEnable(Button button, SelectStatuses select, ItemStatuses item)
